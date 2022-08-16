@@ -39,12 +39,16 @@ body{
 
 .listli li{
     margin-bottom: 13px;
-    background-image: url(/img/checkicon.png);
-    background-repeat: no-repeat;
-    padding-left: 30px;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     font-size: 20px;
     color:#273d46;
+}
+.listli li span::before{
+    content: ' ';
+    width: 35px;
+    height: 19px;
+    display: inline-block;
+    background: url(/img/checkicon.png) left no-repeat;
 }
 .listli li:first-child{
     text-decoration: line-through;
@@ -61,11 +65,14 @@ body{
 }
 .listli li:hover{
     color: #d55a5a;
-    background-image: url(/img/checkiconred.png);
     text-decoration: none;
     text-transform: none;
     font-style: normal;
     text-shadow: none;
+}
+.listli li span:hover::before{
+    background: url(/img/checkiconred.png) no-repeat;
+    display: inline-block;
 }
 
 .panel__button{
@@ -82,7 +89,8 @@ body{
     box-shadow: 3px 5px 3px rgba(0, 0, 0, 0.5);
     
 }
-.panel__button span{
+.panel__button span::after{
+    content: ' ';
     background: url(/img/Shape.png) right no-repeat;
     padding-right: 30px;
 }
